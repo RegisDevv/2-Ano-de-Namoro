@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2° Ano de Namoro — Nath & Regis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <canvas id="particlesCanvas"></canvas>
+
+  <header>
+    <nav class="chapter-nav">
+      <a href="index.html" class="nav-pill">⬅ Início</a>
+      <a href="ano1.html" class="nav-pill">1º Ano</a>
+      <a href="ano2.html" class="nav-pill highlight">2º Ano ✨</a>
+    </nav>
+
+    <h1>2º Ano — Nossa Evolução</h1>
+    <button id="musicBtn">🎵 Tocar / Pausar Música</button>
+    <audio id="bgMusic" src="Coldplay - Coloratura.mp3" loop></audio>
+  </header>
+
+  <main>
+    <section>
+      <h2 class="romantic">Novas Memórias & Conquistas</h2>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <h3>Virada de Ano em Campos do Jordão</h3>
+          <p>Começamos 2026 juntos na serra, renovando nossas energias para tudo o que viria pela frente.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="single-image reveal">
+      <img src="foto18_campos.jpg" alt="Ano Novo em Campos do Jordão" loading="lazy">
+    </section>
+
+    <section>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <h3>Janeiro/2026 — Nosso Lado Bruxo</h3>
+          <p>Porque com você até entrar no mundo da magia de capa e vassoura fica muito mais divertido.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="single-image reveal">
+      <img src="foto19_bruxos.jpg" alt="Aventura temática" loading="lazy">
+    </section>
+
+    <section>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <h3>Abril/2026 — Da Praia ao Campo</h3>
+          <p>Do mar do Guarujá ao passeio a cavalo em São Roque: qualquer lugar é incrível ao seu lado.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="carousel reveal">
+      <button class="carousel-btn prev">❮</button>
+      <div class="carousel-track">
+        <img src="foto20_guaruja.jpg" alt="Guarujá" loading="lazy">
+        <img src="foto21_saoroque.jpg" alt="São Roque" loading="lazy">
+      </div>
+      <button class="carousel-btn next">❯</button>
+    </section>
+
+    <section>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <h3>Nossa Rotina, Jogos e Shows</h3>
+          <p>Das disputas no UNO Flip!, séries na TV nova e shows ao vivo até os nossos planos cada vez mais sólidos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="timeline">
+        <div class="timeline-item reveal highlight-card">
+          <h3>17/11/2026 — 2 Anos Juntos 💜</h3>
+          <p>Dois anos de parceria, risadas, treinos e sonhos compartilhados. Que venham os próximos capítulos da nossa vida!</p>
+          <button class="letter-btn" onclick="document.getElementById('cartaModal').classList.add('open')">
+            💌 Ler Minha Carta pra Você
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal da Carta -->
+    <div id="cartaModal" class="modal-overlay" onclick="this.classList.remove('open')">
+      <div class="modal-card" onclick="event.stopPropagation()">
+        <h3>Para o meu Amor, Nath</h3>
+        <p>Olhar para trás e ver tudo o que construímos desde 2024 me dá a certeza de que cada momento ao seu lado valeu a pena.</p>
+        <p>Obrigado por ser minha parceira de todas as horas. Feliz 2 anos de namoro!</p>
+        <div style="text-align: center;">
+          <button class="letter-btn" onclick="document.getElementById('cartaModal').classList.remove('open')">Fechar 💜</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    Feito com Amor para você, Nath 💜 — 2024 • 2026
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

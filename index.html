@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nath & Regis — Nossa História</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><text y='50%' x='50%' text-anchor='middle' dominant-baseline='central' font-size='70' fill='%23b880ff'>❤</text></svg>">
+</head>
+<body class="portal-body">
+
+  <canvas id="particlesCanvas"></canvas>
+
+  <main class="portal-container">
+    <h1 class="portal-title">Nath & Regis</h1>
+    <p class="portal-subtitle">17 de novembro — Nosso Universo</p>
+
+    <!-- Contador Global já na entrada -->
+    <div id="timeCounter" class="counter-box">
+      <p>Construindo nossa história há:</p>
+      <div id="timerDisplay">Calculando...</div>
+    </div>
+
+    <!-- Opicional: Pequeno desbloqueio com a data de vocês -->
+    <div id="loginBox" class="login-box">
+      <p>Digite o dia e mês do nosso aniversário (DDMM):</p>
+      <input type="password" id="passInput" placeholder="Ex: 1711" maxlength="4" />
+      <button id="unlockBtn" class="portal-btn primary">Desbloquear Memórias 💜</button>
+      <small id="loginError" class="error-msg">Data incorreta, amor! Dica: 17 de novembro</small>
+    </div>
+
+    <!-- Cards de Escolha de Página (aparecem após desbloquear) -->
+    <div id="chaptersMenu" class="portal-cards hidden">
+      <a href="ano1.html" class="chapter-card" onclick="startMusicSession()">
+        <span class="badge">2024 • 2025</span>
+        <h2>1º Ano de Namoro</h2>
+        <p>Onde tudo começou, o primeiro "fora", nosso reencontro e nossas primeiras viagens.</p>
+        <span class="card-action">Relembrar 1º Ano ➔</span>
+      </a>
+
+      <a href="ano2.html" class="chapter-card featured" onclick="startMusicSession()">
+        <span class="badge new">Novo ✨ 2025 • 2026</span>
+        <h2>2º Ano de Namoro</h2>
+        <p>Nossa evolução, novas aventuras, mais cumplicidade e nossos planos para o futuro.</p>
+        <span class="card-action">Abrir 2º Ano ➔</span>
+      </a>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
