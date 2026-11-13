@@ -244,9 +244,10 @@ header h1 {
 }
 
 .single-image img, .carousel img {
-  height: 380px;
+  height: 520px; /* Altura ideal para fotos verticais de celular */
   width: 100%;
   object-fit: cover;
+  object-position: center 20%; /* Prioriza a parte de cima onde estão os rostos */
   display: block;
 }
 
