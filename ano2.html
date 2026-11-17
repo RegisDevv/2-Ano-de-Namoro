@@ -9,7 +9,6 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50%25' x='50%25' text-anchor='middle' dominant-baseline='central' font-size='80' fill='%23d4af37'%3E⚡%3C/text%3E%3C/svg%3E">
 </head>
 <body>
-
   <canvas id="particlesCanvas"></canvas>
 
   <header class="book-header">
@@ -24,8 +23,6 @@
 
   <main class="open-book-wrapper">
     <div class="parchment-book">
-
-      <!-- PÁGINA 1: CAMPOS DO JORDÃO -->
       <article class="book-page active">
         <div class="page-header">Capítulo I • Ano Novo na Serra</div>
         <h3>Virada de Ano em Campos do Jordão</h3>
@@ -41,7 +38,6 @@
         </div>
       </article>
 
-      <!-- PÁGINA 2: VIAGENS -->
       <article class="book-page">
         <div class="page-header">Capítulo II • Nossas Jornadas</div>
         <h3>Nossas Viagens e Destinos</h3>
@@ -61,7 +57,6 @@
         </div>
       </article>
 
-      <!-- PÁGINA 3: SHOWS E ROLÊS -->
       <article class="book-page">
         <div class="page-header">Capítulo III • Magia, Shows & Rolês</div>
         <h3>Nossos Shows e Rolês</h3>
@@ -79,7 +74,6 @@
         </div>
       </article>
 
-      <!-- PÁGINA 4: GRATIDÃO -->
       <article class="book-page">
         <div class="page-header">Capítulo IV • Minha Melhor Escolha</div>
         <h3>Gratidão por Viver ao Seu Lado</h3>
@@ -97,7 +91,6 @@
         </div>
       </article>
 
-      <!-- PÁGINA 5: ENCERRAMENTO E CARTA DE HOGWARTS -->
       <article class="book-page">
         <div class="page-header">Epílogo • 17 de Novembro de 2026</div>
         <h3>⚡ 2 Anos de Pura Magia ⚡</h3>
@@ -109,16 +102,13 @@
         </div>
       </article>
 
-      <!-- CONTROLES DE VIRAR PÁGINA -->
       <div class="book-controls">
         <button id="prevPageBtn" class="page-turn-btn">⬅ Página Anterior</button>
         <span id="pageIndicator" class="page-number">Página 1 de 5</span>
         <button id="nextPageBtn" class="page-turn-btn">Próxima Página ➔</button>
       </div>
-
     </div>
 
-    <!-- Modal da Carta -->
     <div id="cartaModal" class="modal-overlay" onclick="this.classList.remove('open')">
       <div class="modal-card" onclick="event.stopPropagation()">
         <h3>Cara Srta. Nathalia Lima,</h3>

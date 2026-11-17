@@ -9,7 +9,6 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50%25' x='50%25' text-anchor='middle' dominant-baseline='central' font-size='80' fill='%23d4af37'%3E⚡%3C/text%3E%3C/svg%3E">
 </head>
 <body class="portal-body">
-
   <canvas id="particlesCanvas"></canvas>
 
   <main class="portal-container">
@@ -17,30 +16,24 @@
     <h1 class="portal-title">Nath & Regis</h1>
     <p class="portal-subtitle">⚡ 17 de novembro — Nosso Universo Mágico ⚡</p>
 
-    <!-- Cronômetro Mantido -->
     <div id="timeCounter" class="counter-box">
       <p>CONSTRUINDO NOSSA HISTÓRIA HÁ:</p>
       <div id="timerDisplay">Calculando...</div>
     </div>
 
-    <!-- Botão de Música já no Menu dos Livros -->
     <div style="margin: 15px 0;">
       <button id="musicBtn">🎵 Tocar / Pausar Música</button>
       <audio id="bgMusic" src="ochildren.mp3" loop></audio>
     </div>
 
-    <!-- Desbloqueio Mágico (Alohomora) -->
     <div id="loginBox" class="login-box">
       <p>Lance o feitiço da nossa data (DDMM) para destrancar a biblioteca:</p>
-      <input type="password" id="passInput" placeholder="1711" maxlength="4" />
-      <button id="unlockBtn" class="portal-btn primary">✨ Alohomora (1711)</button>
-      <small id="loginError" class="error-msg">Feitiço incorreto! Dica: 17 de novembro 😉</small>
+      <input type="password" id="passInput" placeholder="" maxlength="4" />
+      <button id="unlockBtn" class="portal-btn primary">✨ Alohomora</button>
+      <small id="loginError" class="error-msg">Feitiço incorreto!</small>
     </div>
 
-    <!-- Os 2 Livros (Aparecem ao desbloquear) -->
     <div id="chaptersMenu" class="bookshelf hidden">
-      
-      <!-- LIVRO 1 -->
       <a href="ano1.html" class="magic-book book-one" onclick="startMusicSession()">
         <div class="book-spine"></div>
         <div class="book-cover">
@@ -52,7 +45,6 @@
         </div>
       </a>
 
-      <!-- LIVRO 2 -->
       <a href="ano2.html" class="magic-book book-two featured" onclick="startMusicSession()">
         <div class="book-spine"></div>
         <div class="book-cover">
@@ -64,7 +56,6 @@
         </div>
       </a>
 
-      <!-- LIVRO 3 (EM CONSTRUÇÃO) -->
       <div class="magic-book book-three" onclick="document.getElementById('futureModal').classList.add('open')">
         <div class="book-spine"></div>
         <div class="book-cover">
@@ -75,10 +66,8 @@
           <span class="book-open-btn locked">🔒 Em Desenvolvimento...</span>
         </div>
       </div>
-
     </div>
 
-    <!-- Modal quando clica no 3º Livro -->
     <div id="futureModal" class="modal-overlay" onclick="this.classList.remove('open')">
       <div class="modal-card" onclick="event.stopPropagation()">
         <h3>🪶 Tomo III — Em Construção</h3>
