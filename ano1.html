@@ -3,158 +3,135 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>1° Ano de Namoro — Nath & Regis</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Tomo I: 1° Ano — Nath & Regis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50%25' x='50%25' text-anchor='middle' dominant-baseline='central' font-size='80' fill='%23b880ff'%3E❤%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50%25' x='50%25' text-anchor='middle' dominant-baseline='central' font-size='80' fill='%23d4af37'%3E⚡%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 
   <canvas id="particlesCanvas"></canvas>
 
-  <header>
+  <header class="book-header">
     <nav class="chapter-nav">
-      <a href="index.html" class="nav-pill">⬅ Início</a>
-      <a href="ano1.html" class="nav-pill highlight">1º Ano</a>
-      <a href="ano2.html" class="nav-pill">Ir para o 2º Ano ➔</a>
+      <a href="index.html" class="nav-pill">⬅ Estante</a>
+      <a href="ano1.html" class="nav-pill highlight">📖 Tomo I (1º Ano)</a>
+      <a href="ano2.html" class="nav-pill">📖 Tomo II (2º Ano) ➔</a>
     </nav>
-
-    <h1>1º Ano — Onde Tudo Começou</h1>
     <button id="musicBtn">🎵 Tocar / Pausar Música</button>
-    <audio id="bgMusic" src="Coldplay - Coloratura.mp3" loop></audio>
+    <audio id="bgMusic" src="Nick Cave & The Bad Seeds - O Children (Official Audio).mp3" loop></audio>
   </header>
 
-  <main>
-    <section>
-      <h2 class="romantic">Nossa História</h2>
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <h3>13/02/2024 — Começou tudo</h3>
-          <p>O dia que nossos caminhos realmente se cruzaram.</p>
+  <main class="open-book-wrapper">
+    <div class="parchment-book">
+
+      <!-- PÁGINA 1 -->
+      <article class="book-page active">
+        <div class="page-header">Capítulo I • O Encontro</div>
+        <h3>13/02/2024 — Começou tudo</h3>
+        <p>O dia em que a magia aconteceu e nossos caminhos realmente se cruzaram.</p>
+        <div class="single-image">
+          <img src="ano1/foto1.jpg" alt="Foto 1">
         </div>
-      </div>
-    </section>
+      </article>
 
-    <section class="single-image reveal">
-      <img src="ano1/foto1.jpg" alt="Foto de recordação 1" loading="lazy">
-    </section>
-
-    <section>
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <h3>30/05/2024 — Você me deu um fora</h3>
-          <p>Criei coragem pra te chamar pra sair e tomei um não seco.</p>
+      <!-- PÁGINA 2 -->
+      <article class="book-page">
+        <div class="page-header">Capítulo II • O Feitiço Recusado</div>
+        <h3>30/05/2024 — Você me deu um fora</h3>
+        <p>Criei coragem de um verdadeiro Grifinório pra te chamar pra sair e tomei um não seco.</p>
+        <div class="single-image">
+          <img src="ano1/foto2.jpg" alt="Foto 2">
         </div>
-      </div>
-    </section>
+      </article>
 
-    <section class="single-image reveal">
-      <img src="ano1/foto2.jpg" alt="Foto de recordação 2" loading="lazy">
-    </section>
-
-    <section>
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <h3>17/11/2024 — O destino decidiu nos reunir</h3>
-          <p>Neste dia me despertou um desejo de te querer na minha vida.</p>
+      <!-- PÁGINA 3 -->
+      <article class="book-page">
+        <div class="page-header">Capítulo III • O Reencontro</div>
+        <h3>17/11/2024 — O destino decidiu nos reunir</h3>
+        <p>Neste dia despertou o desejo definitivo de te querer na minha vida.</p>
+        <div class="single-image">
+          <img src="ano1/foto3.png" alt="Foto 3">
         </div>
-      </div>
-    </section>
+      </article>
 
-    <section class="single-image reveal">
-      <img src="ano1/foto3.png" alt="Foto de recordação 3" loading="lazy">
-    </section>
-
-    <section>
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <h3>Desde então decidimos construir histórias</h3>
-          <p>Passamos a dormir juntos mesmo longe.</p>
+      <!-- PÁGINA 4 -->
+      <article class="book-page">
+        <div class="page-header">Capítulo IV • Conexão</div>
+        <h3>Desde então decidimos construir histórias</h3>
+        <p>Passamos a dormir juntos mesmo longe, conectados todas as noites.</p>
+        <div class="single-image">
+          <img src="ano1/foto4.png" alt="Foto 4">
         </div>
-      </div>
-    </section>
+      </article>
 
-    <section class="single-image reveal">
-      <img src="ano1/foto4.png" alt="Foto de recordação 4" loading="lazy">
-    </section>
-
-    <section>
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <h3>Entramos juntos no foco de treinar</h3>
-          <p>Às vezes falhamos, mas nunca desistimos.</p>
+      <!-- PÁGINA 5 -->
+      <article class="book-page">
+        <div class="page-header">Capítulo V • Parceria de Treino</div>
+        <h3>Entramos juntos no foco de treinar</h3>
+        <p>Às vezes falhamos, mas nunca desistimos um do outro.</p>
+        <div class="carousel">
+          <button class="carousel-btn prev">❮</button>
+          <div class="carousel-track">
+            <img src="ano1/foto5.jpg" alt="Foto 5">
+            <img src="ano1/foto6.jpg" alt="Foto 6">
+            <img src="ano1/foto7.jpg" alt="Foto 7">
+          </div>
+          <button class="carousel-btn next">❯</button>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <section class="carousel reveal">
-      <button class="carousel-btn prev">❮</button>
-      <div class="carousel-track">
-        <img src="ano1/foto5.jpg" alt="Foto 5" loading="lazy">
-        <img src="ano1/foto6.jpg" alt="Foto 6" loading="lazy">
-        <img src="ano1/foto7.jpg" alt="Foto 7" loading="lazy">
-      </div>
-      <button class="carousel-btn next">❯</button>
-    </section>
-
-    <section>
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <h3>Saímos e viajamos para diversos lugares</h3>
-          <p>Viver essas experiências ao seu lado foi incrível.</p>
+      <!-- PÁGINA 6 -->
+      <article class="book-page">
+        <div class="page-header">Capítulo VI • Nossas Jornadas</div>
+        <h3>Saímos e viajamos para diversos lugares</h3>
+        <p>Viver essas experiências ao seu lado foi mágico.</p>
+        <div class="carousel">
+          <button class="carousel-btn prev">❮</button>
+          <div class="carousel-track">
+            <img src="ano1/foto8.jpg" alt="Foto 8">
+            <img src="ano1/fotoe.jpg" alt="Foto extra">
+            <img src="ano1/foto9.jpg" alt="Foto 9">
+            <img src="ano1/foto10.jpg" alt="Foto 10">
+            <img src="ano1/foto11.jpg" alt="Foto 11">
+            <img src="ano1/foto12.jpg" alt="Foto 12">
+            <img src="ano1/foto13.png" alt="Foto 13">
+            <img src="ano1/foto14.png" alt="Foto 14">
+          </div>
+          <button class="carousel-btn next">❯</button>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <section class="carousel reveal">
-      <button class="carousel-btn prev">❮</button>
-      <div class="carousel-track">
-        <img src="ano1/foto8.jpg" alt="Foto 8" loading="lazy">
-        <img src="ano1/fotoe.jpg" alt="Foto extra" loading="lazy">
-        <img src="ano1/foto9.jpg" alt="Foto 9" loading="lazy">
-        <img src="ano1/foto10.jpg" alt="Foto 10" loading="lazy">
-        <img src="ano1/foto11.jpg" alt="Foto 11" loading="lazy">
-        <img src="ano1/foto12.jpg" alt="Foto 12" loading="lazy">
-        <img src="ano1/foto13.png" alt="Foto 13" loading="lazy">
-        <img src="ano1/foto14.png" alt="Foto 14" loading="lazy">
-      </div>
-      <button class="carousel-btn next">❯</button>
-    </section>
-
-    <section>
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <h3>07/09/2025 — Decidimos oficializar nosso relacionamento</h3>
+      <!-- PÁGINA 7 -->
+      <article class="book-page">
+        <div class="page-header">Capítulo VII • O Voto Perpétuo</div>
+        <h3>07/09/2025 — Oficializamos nosso relacionamento</h3>
+        <p>E fechamos nosso primeiro ano sabendo que era só o começo de uma linda saga.</p>
+        <div class="carousel">
+          <button class="carousel-btn prev">❮</button>
+          <div class="carousel-track">
+            <img src="ano1/foto15.png" alt="Foto 15">
+            <img src="ano1/foto16.png" alt="Foto 16">
+            <img src="ano1/foto17.png" alt="Foto 17">
+          </div>
+          <button class="carousel-btn next">❯</button>
         </div>
-      </div>
-    </section>
-
-    <section class="carousel reveal">
-      <button class="carousel-btn prev">❮</button>
-      <div class="carousel-track">
-        <img src="ano1/foto15.png" alt="Foto 15" loading="lazy">
-        <img src="ano1/foto16.png" alt="Foto 16" loading="lazy">
-        <img src="ano1/foto17.png" alt="Foto 17" loading="lazy">
-      </div>
-      <button class="carousel-btn next">❯</button>
-    </section>
-
-    <section>
-      <div class="timeline">
-        <div class="timeline-item reveal highlight-card">
-          <h3>17/11/2025 — 1 Ano Juntos</h3>
-          <p>E esse foi só o começo de uma história linda.</p>
-          <br>
-          <a href="ano2.html" class="nav-pill highlight" style="display:inline-block;">Ver Nosso 2º Ano ✨ ➔</a>
+        <div style="margin-top: 15px;">
+          <a href="ano2.html" class="letter-btn" style="text-decoration:none; display:inline-block;">Abrir Tomo II (2º Ano) ⚡</a>
         </div>
+      </article>
+
+      <!-- CONTROLES DE VIRAR PÁGINA -->
+      <div class="book-controls">
+        <button id="prevPageBtn" class="page-turn-btn">⬅ Página Anterior</button>
+        <span id="pageIndicator" class="page-number">Página 1 de 7</span>
+        <button id="nextPageBtn" class="page-turn-btn">Próxima Página ➔</button>
       </div>
-    </section>
+
+    </div>
   </main>
 
-  <footer>
-    Feito com Amor para você, Nath 💜
-  </footer>
-
+  <footer>Malfeito Feito • Com amor para você, Nath ⚡</footer>
   <script src="script.js"></script>
 </body>
 </html>

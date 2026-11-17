@@ -3,48 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nath & Regis — Nossa História</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Nath & Regis — Crônicas da Nossa Magia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50%25' x='50%25' text-anchor='middle' dominant-baseline='central' font-size='80' fill='%23b880ff'%3E❤%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50%25' x='50%25' text-anchor='middle' dominant-baseline='central' font-size='80' fill='%23d4af37'%3E⚡%3C/text%3E%3C/svg%3E">
 </head>
 <body class="portal-body">
 
   <canvas id="particlesCanvas"></canvas>
 
   <main class="portal-container">
+    <p class="magic-quote">"Juro solenemente que nosso amor é infinito"</p>
     <h1 class="portal-title">Nath & Regis</h1>
-    <p class="portal-subtitle">17 de novembro — Nosso Universo</p>
+    <p class="portal-subtitle">⚡ 17 de novembro — Nosso Universo Mágico ⚡</p>
 
-    <!-- Contador Global já na entrada -->
+    <!-- Cronômetro Mantido -->
     <div id="timeCounter" class="counter-box">
-      <p>Construindo nossa história há:</p>
+      <p>CONSTRUINDO NOSSA HISTÓRIA HÁ:</p>
       <div id="timerDisplay">Calculando...</div>
     </div>
 
-    <!-- Opicional: Pequeno desbloqueio com a data de vocês -->
-    <div id="loginBox" class="login-box">
-      <p>Digite o dia e mês do nosso aniversário (DDMM):</p>
-      <input type="password" id="passInput" placeholder="" maxlength="4" />
-      <button id="unlockBtn" class="portal-btn primary">Desbloquear Memórias 💜</button>
-      <small id="loginError" class="error-msg">Data incorreta, amor! Dica: 17 de novembro</small>
+    <!-- Botão de Música já no Menu dos Livros -->
+    <div style="margin: 15px 0;">
+      <button id="musicBtn">🎵 Tocar / Pausar Música</button>
+      <audio id="bgMusic" src="Nick Cave & The Bad Seeds - O Children (Official Audio).mp3" loop></audio>
     </div>
 
-    <!-- Cards de Escolha de Página (aparecem após desbloquear) -->
-    <div id="chaptersMenu" class="portal-cards hidden">
-      <a href="ano1.html" class="chapter-card" onclick="startMusicSession()">
-        <span class="badge">2024 • 2025</span>
-        <h2>1º Ano de Namoro</h2>
-        <p>Onde tudo começou, o primeiro "fora", nosso reencontro e nossas primeiras viagens.</p>
-        <span class="card-action">Relembrar 1º Ano ➔</span>
+    <!-- Desbloqueio Mágico (Alohomora) -->
+    <div id="loginBox" class="login-box">
+      <p>Lance o feitiço da nossa data (DDMM) para destrancar a biblioteca:</p>
+      <input type="password" id="passInput" placeholder="1711" maxlength="4" />
+      <button id="unlockBtn" class="portal-btn primary">✨ Alohomora (1711)</button>
+      <small id="loginError" class="error-msg">Feitiço incorreto! Dica: 17 de novembro 😉</small>
+    </div>
+
+    <!-- Os 2 Livros (Aparecem ao desbloquear) -->
+    <div id="chaptersMenu" class="bookshelf hidden">
+      
+      <!-- LIVRO 1 -->
+      <a href="ano1.html" class="magic-book book-one" onclick="startMusicSession()">
+        <div class="book-spine"></div>
+        <div class="book-cover">
+          <span class="book-year">2024 • 2025</span>
+          <div class="book-emblem">🦉</div>
+          <h2>Tomo I<br><small>A Pedra do Destino</small></h2>
+          <p>1º Ano de Namoro: Onde nossos caminhos se cruzaram, o primeiro feitiço e nossas primeiras jornadas.</p>
+          <span class="book-open-btn">Abrir Livro I ➔</span>
+        </div>
       </a>
 
-      <a href="ano2.html" class="chapter-card featured" onclick="startMusicSession()">
-        <span class="badge new">Novo ✨ 2025 • 2026</span>
-        <h2>2º Ano de Namoro</h2>
-        <p>Nossa evolução, novas aventuras, mais cumplicidade e nossos planos para o futuro.</p>
-        <span class="card-action">Abrir 2º Ano ➔</span>
+      <!-- LIVRO 2 -->
+      <a href="ano2.html" class="magic-book book-two featured" onclick="startMusicSession()">
+        <div class="book-spine"></div>
+        <div class="book-cover">
+          <span class="book-year new">✨ Novo • 2025 • 2026</span>
+          <div class="book-emblem">⚡</div>
+          <h2>Tomo II<br><small>O Cálice de Memórias</small></h2>
+          <p>2º Ano de Namoro: Nossa evolução, viagens mágicas, shows e a gratidão de viver ao seu lado.</p>
+          <span class="book-open-btn">Abrir Livro II ➔</span>
+        </div>
       </a>
+
+      <!-- LIVRO 3 (EM CONSTRUÇÃO) -->
+      <div class="magic-book book-three" onclick="document.getElementById('futureModal').classList.add('open')">
+        <div class="book-spine"></div>
+        <div class="book-cover">
+          <span class="book-year building">⏳ Em Construção • 2026 • 2027</span>
+          <div class="book-emblem">🪶</div>
+          <h2>Tomo III<br><small>As Crônicas do Futuro</small></h2>
+          <p>3º Ano de Namoro: Páginas em branco que estamos construindo e escrevendo juntos a cada novo dia.</p>
+          <span class="book-open-btn locked">🔒 Em Desenvolvimento...</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Modal quando clica no 3º Livro -->
+    <div id="futureModal" class="modal-overlay" onclick="this.classList.remove('open')">
+      <div class="modal-card" onclick="event.stopPropagation()">
+        <h3>🪶 Tomo III — Em Construção</h3>
+        <p>Este grimório guardará as memórias do nosso <strong>3º Ano de Namoro</strong> e está sendo escrito por nós dois em tempo real!</p>
+        <p>Cada nova viagem, cada conquista e cada momento que vivermos juntos a partir de hoje preencherá as páginas deste próximo livro.</p>
+        <div style="text-align: center; margin-top: 20px;">
+          <button class="letter-btn" onclick="document.getElementById('futureModal').classList.remove('open')">Continuar Construindo Nossa História ⚡</button>
+        </div>
+      </div>
     </div>
   </main>
 

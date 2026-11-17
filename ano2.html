@@ -3,147 +3,135 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2° Ano de Namoro — Nath & Regis</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Tomo II: 2° Ano — Nath & Regis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50%25' x='50%25' text-anchor='middle' dominant-baseline='central' font-size='80' fill='%23b880ff'%3E❤%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50%25' x='50%25' text-anchor='middle' dominant-baseline='central' font-size='80' fill='%23d4af37'%3E⚡%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 
   <canvas id="particlesCanvas"></canvas>
 
-  <header>
+  <header class="book-header">
     <nav class="chapter-nav">
-      <a href="index.html" class="nav-pill">⬅ Início</a>
-      <a href="ano1.html" class="nav-pill">1º Ano</a>
-      <a href="ano2.html" class="nav-pill highlight">2º Ano ✨</a>
+      <a href="index.html" class="nav-pill">⬅ Estante</a>
+      <a href="ano1.html" class="nav-pill">📖 Tomo I (1º Ano)</a>
+      <a href="ano2.html" class="nav-pill highlight">📖 Tomo II (2º Ano) ✨</a>
     </nav>
-
-    <h1>2º Ano — Nossa Evolução</h1>
     <button id="musicBtn">🎵 Tocar / Pausar Música</button>
-    <audio id="bgMusic" src="Coldplay - Coloratura.mp3" loop></audio>
+    <audio id="bgMusic" src="Nick Cave & The Bad Seeds - O Children (Official Audio).mp3" loop></audio>
   </header>
 
-  <main>
-    <!-- ================= SEÇÃO 1: CAMPOS DO JORDÃO ================= -->
-    <section>
-      <h2 class="romantic">Novas Memórias & Conquistas</h2>
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <h3>Virada de Ano em Campos do Jordão</h3>
-          <p>Começamos 2026 juntos na serra, renovando nossas energias para tudo o que viria pela frente.</p>
+  <main class="open-book-wrapper">
+    <div class="parchment-book">
+
+      <!-- PÁGINA 1: CAMPOS DO JORDÃO -->
+      <article class="book-page active">
+        <div class="page-header">Capítulo I • Ano Novo na Serra</div>
+        <h3>Virada de Ano em Campos do Jordão</h3>
+        <p>Começamos 2026 juntos na serra, renovando nossas energias para tudo o que viria pela frente.</p>
+        <div class="carousel">
+          <button class="carousel-btn prev">❮</button>
+          <div class="carousel-track">
+            <img src="ano2/foto1.jpg" alt="Campos 1">
+            <img src="ano2/foto2.png" alt="Campos 2">
+            <img src="ano2/foto3.png" alt="Campos 3">
+          </div>
+          <button class="carousel-btn next">❯</button>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <section class="carousel reveal">
-      <button class="carousel-btn prev">❮</button>
-      <div class="carousel-track">
-        <img src="ano2/foto1.jpg" alt="Campos do Jordão 1" loading="lazy">
-        <img src="ano2/foto2.png" alt="Campos do Jordão 2" loading="lazy">
-        <img src="ano2/foto3.png" alt="Campos do Jordão 3" loading="lazy">
-      </div>
-      <button class="carousel-btn next">❯</button>
-    </section>
-
-    <!-- ================= SEÇÃO 2: VIAGENS (5 FOTOS) ================= -->
-    <section>
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <h3>Nossas Viagens e Destinos</h3>
-          <p>Pegar a estrada com você é sempre a melhor escolha. Da praia à serra, colecionamos lugares e momentos inesquecíveis.</p>
+      <!-- PÁGINA 2: VIAGENS -->
+      <article class="book-page">
+        <div class="page-header">Capítulo II • Nossas Jornadas</div>
+        <h3>Nossas Viagens e Destinos</h3>
+        <p>Pegar a estrada com você é sempre a melhor escolha. Da praia à serra, colecionamos lugares e momentos inesquecíveis.</p>
+        <div class="carousel">
+          <button class="carousel-btn prev">❮</button>
+          <div class="carousel-track">
+            <img src="ano2/foto4.png" alt="Campos 4">
+            <img src="ano2/foto5.png" alt="Campos 5">
+            <img src="ano2/foto6.png" alt="Viagem 1">
+            <img src="ano2/foto7.png" alt="Viagem 2">
+            <img src="ano2/foto8.png" alt="Viagem 3">
+            <img src="ano2/fotoextra1.png" alt="Viagem 4">
+            <img src="ano2/fotoextra2.png" alt="Viagem 5">
+          </div>
+          <button class="carousel-btn next">❯</button>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <section class="carousel reveal">
-      <button class="carousel-btn prev">❮</button>
-      <div class="carousel-track">
-        <img src="ano2/foto4.png" alt="Viagem 1" loading="lazy">
-        <img src="ano2/foto5.png" alt="Viagem 2" loading="lazy">
-        <img src="ano2/foto6.png" alt="Viagem 3" loading="lazy">
-        <img src="ano2/foto7.png" alt="Viagem 4" loading="lazy">
-        <img src="ano2/foto8.png" alt="Viagem 5" loading="lazy">
-        <img src="ano2/fotoextra1.png" alt="Viagem 6" loading="lazy">
-        <img src="ano2/fotoextra2.png" alt="Viagem 7" loading="lazy">
-      </div>
-      <button class="carousel-btn next">❯</button>
-    </section>
-
-    <!-- ================= SEÇÃO 3: SHOWS E ROLÊS (5 FOTOS) ================= -->
-    <section>
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <h3>Nossos Shows e Rolês</h3>
-          <p>Curtir a música ao vivo, cantar junto e aproveitar cada saída com a melhor companhia do mundo.</p>
+      <!-- PÁGINA 3: SHOWS E ROLÊS -->
+      <article class="book-page">
+        <div class="page-header">Capítulo III • Magia, Shows & Rolês</div>
+        <h3>Nossos Shows e Rolês</h3>
+        <p>Curtir a música ao vivo, entrar no mundo bruxo e aproveitar cada saída com a melhor companhia do mundo.</p>
+        <div class="carousel">
+          <button class="carousel-btn prev">❮</button>
+          <div class="carousel-track">
+            <img src="ano2/foto9.jpg" alt="Rolê 1">
+            <img src="ano2/foto10.jpg" alt="Rolê 2">
+            <img src="ano2/foto11.jpeg" alt="Rolê 3">
+            <img src="ano2/foto12.webp" alt="Rolê 4">
+            <img src="ano2/fotoextra3.jpg" alt="Rolê 5">
+          </div>
+          <button class="carousel-btn next">❯</button>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <section class="carousel reveal">
-      <button class="carousel-btn prev">❮</button>
-      <div class="carousel-track">
-        <img src="ano2/foto9.jpg" alt="Show e Rolê 1" loading="lazy">
-        <img src="ano2/foto10.jpg" alt="Show e Rolê 2" loading="lazy">
-        <img src="ano2/foto11.jpeg" alt="Show e Rolê 3" loading="lazy">
-        <img src="ano2/foto12.webp" alt="Show e Rolê 4" loading="lazy">
-        <img src="ano2/fotoextra3.jpg" alt="Show e Rolê 5" loading="lazy">
-      </div>
-      <button class="carousel-btn next">❯</button>
-    </section>
-
-    <!-- ================= SEÇÃO 4: GRATIDÃO (5 FOTOS) ================= -->
-    <section>
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <h3>Gratidão por Viver ao Seu Lado</h3>
-          <p>Sou grato por cada detalhe da nossa rotina, pelo seu apoio, pelo seu sorriso e pela paz de dividir a vida com você.</p>
+      <!-- PÁGINA 4: GRATIDÃO -->
+      <article class="book-page">
+        <div class="page-header">Capítulo IV • Minha Melhor Escolha</div>
+        <h3>Gratidão por Viver ao Seu Lado</h3>
+        <p>Sou grato por cada detalhe da nossa rotina, pelo seu apoio, pelo seu sorriso e pela paz de dividir a vida com você.</p>
+        <div class="carousel">
+          <button class="carousel-btn prev">❮</button>
+          <div class="carousel-track">
+            <img src="ano2/foto13.webp" alt="Gratidão 1">
+            <img src="ano2/foto14.jpg" alt="Gratidão 2">
+            <img src="ano2/foto15.jpg" alt="Gratidão 2">
+            <img src="ano2/foto16.webp" alt="Gratidão 3">
+            <img src="ano2/foto17.png" alt="Gratidão 4">
+          </div>
+          <button class="carousel-btn next">❯</button>
         </div>
-      </div>
-    </section>
+      </article>
 
-    <section class="carousel reveal">
-      <button class="carousel-btn prev">❮</button>
-      <div class="carousel-track">
-        <img src="ano2/foto13.webp" alt="Gratidão 1" loading="lazy">
-        <img src="ano2/foto14.jpg" alt="Gratidão 2" loading="lazy">
-        <img src="ano2/foto15.jpg" alt="Gratidão 3" loading="lazy">
-        <img src="ano2/foto16.webp" alt="Gratidão 4" loading="lazy">
-        <img src="ano2/foto17.png" alt="Gratidão 5" loading="lazy">
-      </div>
-      <button class="carousel-btn next">❯</button>
-    </section>
-
-    <!-- ================= ENCERRAMENTO E CARTA ================= -->
-    <section>
-      <div class="timeline">
-        <div class="timeline-item reveal highlight-card">
-          <h3>17/11/2026 — 2 Anos Juntos 💜</h3>
-          <p>Dois anos de parceria, risadas, treinos e sonhos compartilhados. Que venham os próximos capítulos da nossa vida!</p>
+      <!-- PÁGINA 5: ENCERRAMENTO E CARTA DE HOGWARTS -->
+      <article class="book-page">
+        <div class="page-header">Epílogo • 17 de Novembro de 2026</div>
+        <h3>⚡ 2 Anos de Pura Magia ⚡</h3>
+        <p>Dois anos de parceria, risadas, conquistas e sonhos compartilhados. Você é a magia mais linda da minha vida, Nath!</p>
+        <div style="margin: 35px 0;">
           <button class="letter-btn" onclick="document.getElementById('cartaModal').classList.add('open')">
-            💌 Ler Minha Carta pra Você
+            🦉 Abrir Carta de Hogwarts pra Você
           </button>
         </div>
+      </article>
+
+      <!-- CONTROLES DE VIRAR PÁGINA -->
+      <div class="book-controls">
+        <button id="prevPageBtn" class="page-turn-btn">⬅ Página Anterior</button>
+        <span id="pageIndicator" class="page-number">Página 1 de 5</span>
+        <button id="nextPageBtn" class="page-turn-btn">Próxima Página ➔</button>
       </div>
-    </section>
+
+    </div>
 
     <!-- Modal da Carta -->
     <div id="cartaModal" class="modal-overlay" onclick="this.classList.remove('open')">
       <div class="modal-card" onclick="event.stopPropagation()">
-        <h3>Para o meu Amor, Nath</h3>
-        <p>Olhar para trás e ver tudo o que construímos desde 2024 me dá a certeza de que cada momento ao seu lado valeu a pena.</p>
-        <p>Das nossas viagens e shows até o nosso dia a dia, obrigado por ser minha parceira de todas as horas. Feliz 2 anos de namoro!</p>
-        <div style="text-align: center;">
-          <button class="letter-btn" onclick="document.getElementById('cartaModal').classList.remove('open')">Fechar 💜</button>
+        <h3>Cara Srta. Nathalia Lima,</h3>
+        <p>Temos o prazer de informar que já se passaram 2 anos desde que você lançou o feitiço mais forte do mundo no meu coração.</p>
+        <p>Olhar para trás e ver tudo o que construímos desde 2024 me dá a certeza de que cada viagem, cada show e cada dia da nossa rotina ao seu lado valeu a pena. Obrigado por ser minha parceira de todas as horas. Feliz 2 anos de namoro!</p>
+        <div style="text-align: center; margin-top: 20px;">
+          <button class="letter-btn" onclick="document.getElementById('cartaModal').classList.remove('open')">Malfeito Feito ⚡</button>
         </div>
       </div>
     </div>
   </main>
 
-  <footer>
-    Feito com Amor para você, Nath 💜 — 2024 • 2026
-  </footer>
-
+  <footer>Malfeito Feito • Com amor para você, Nath ⚡</footer>
   <script src="script.js"></script>
 </body>
 </html>

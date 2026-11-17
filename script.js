@@ -1,5 +1,5 @@
 // =========================================================
-// 1. LÓGICA DO PORTAL DE LOGIN (Roda apenas no index.html)
+// 1. PORTAL DE ENTRADA (Alohomora - index.html)
 // =========================================================
 const unlockBtn = document.getElementById("unlockBtn");
 const passInput = document.getElementById("passInput");
@@ -7,7 +7,6 @@ const loginBox = document.getElementById("loginBox");
 const chaptersMenu = document.getElementById("chaptersMenu");
 const loginError = document.getElementById("loginError");
 
-// Se já desbloqueou nesta sessão, mostra os cards direto
 if (sessionStorage.getItem("unlocked") === "true" && loginBox && chaptersMenu) {
   loginBox.classList.add("hidden");
   chaptersMenu.classList.remove("hidden");
@@ -15,42 +14,65 @@ if (sessionStorage.getItem("unlocked") === "true" && loginBox && chaptersMenu) {
 
 if (unlockBtn && passInput) {
   const checkPass = () => {
-    const val = passInput.value.trim();
-    // Aceita "1711" ou "17/11" ou vazio se quiser facilitar
-    if (val === "1711" || val === "17/11") {
+    const val = passInput.value.trim().toLowerCase();
+    if (val === "1711" || val === "17/11" || val === "alohomora") {
       sessionStorage.setItem("unlocked", "true");
+      sessionStorage.setItem("musicPlaying", "true");
       loginBox.classList.add("hidden");
       chaptersMenu.classList.remove("hidden");
+
+      // Já inicia a música na estante assim que destranca
+      const audioEl = document.getElementById("bgMusic");
+      const btnEl = document.getElementById("musicBtn");
+      if (audioEl) {
+        if (audioEl.currentTime < 10) audioEl.currentTime = 10;
+        audioEl.play().then(() => {
+          if (btnEl) btnEl.textContent = "⏸ Pausar Música";
+        }).catch(() => {});
+      }
     } else {
       loginError.style.display = "block";
     }
   };
-
   unlockBtn.addEventListener("click", checkPass);
   passInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") checkPass();
   });
 }
 
-// Marca que o usuário clicou para entrar e libera o autoplay nas páginas seguintes
 function startMusicSession() {
   sessionStorage.setItem("musicPlaying", "true");
 }
 
 // =========================================================
-// 2. MÚSICA CONTÍNUA ENTRE PÁGINAS (ano1.html e ano2.html)
+// 2. MÚSICA CONTÍNUA (Pulando os primeiros 10 segundos)
 // =========================================================
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
+const INTRO_SKIP = 11; // Segundos iniciais que serão pulados
 
 if (music && musicBtn) {
-  // Retoma do segundo exato em que estava na outra página
   const savedTime = parseFloat(sessionStorage.getItem("musicTime") || "0");
-  if (savedTime > 0) {
-    music.currentTime = savedTime;
+  // Se estiver começando do zero (ou antes dos 10s), já pula direto para 10s
+  const startAt = savedTime > INTRO_SKIP ? savedTime : INTRO_SKIP;
+
+  const setInitialTime = () => {
+    music.currentTime = startAt;
+  };
+
+  if (music.readyState >= 1) {
+    setInitialTime();
+  } else {
+    music.addEventListener("loadedmetadata", setInitialTime, { once: true });
   }
 
-  // Se estava tocando antes de trocar de página, continua tocando
+  // Quando a música repetir (loop), pula os 10s iniciais novamente
+  music.addEventListener("timeupdate", () => {
+    if (music.currentTime < INTRO_SKIP && !music.paused) {
+      music.currentTime = INTRO_SKIP;
+    }
+  });
+
   if (sessionStorage.getItem("musicPlaying") === "true") {
     music.play().then(() => {
       musicBtn.textContent = "⏸ Pausar Música";
@@ -59,15 +81,13 @@ if (music && musicBtn) {
     });
   }
 
-  // Salva o tempo atual a cada meio segundo
   setInterval(() => {
-    if (!music.paused) {
-      sessionStorage.setItem("musicTime", music.currentTime);
-    }
+    if (!music.paused) sessionStorage.setItem("musicTime", music.currentTime);
   }, 500);
 
   musicBtn.addEventListener("click", () => {
     if (music.paused) {
+      if (music.currentTime < INTRO_SKIP) music.currentTime = INTRO_SKIP;
       music.play();
       sessionStorage.setItem("musicPlaying", "true");
       musicBtn.textContent = "⏸ Pausar Música";
@@ -80,12 +100,11 @@ if (music && musicBtn) {
 }
 
 // =========================================================
-// 3. CONTADOR EM TEMPO REAL (Desde 17/11/2024)
+// 3. CRONÔMETRO EM TEMPO REAL (Desde 17/11/2024)
 // =========================================================
 const timerDisplay = document.getElementById("timerDisplay");
 if (timerDisplay) {
   const startDate = new Date("2024-11-17T00:00:00");
-
   function updateCounter() {
     const now = new Date();
     const diff = now - startDate;
@@ -107,7 +126,79 @@ if (timerDisplay) {
 }
 
 // =========================================================
-// 4. CARROSSEL E REVEAL (Roda nas páginas de história)
+// 4. SISTEMA DE VIRAR PÁGINAS 3D REALISTA (1.6s + Sombra)
+// =========================================================
+const bookContainer = document.querySelector(".parchment-book");
+const pages = document.querySelectorAll(".book-page");
+const prevPageBtn = document.getElementById("prevPageBtn");
+const nextPageBtn = document.getElementById("nextPageBtn");
+const pageIndicator = document.getElementById("pageIndicator");
+
+if (pages.length > 0 && prevPageBtn && nextPageBtn) {
+  let currentPage = 0;
+  let isTurning = false;
+  const totalPages = pages.length;
+  const TURN_DURATION = 1600; // 1.6 segundos para virar a folha com calma
+
+  function updateControls() {
+    pageIndicator.textContent = `Página ${currentPage + 1} de ${totalPages}`;
+    prevPageBtn.disabled = currentPage === 0 || isTurning;
+    nextPageBtn.disabled = currentPage === totalPages - 1 || isTurning;
+  }
+
+  function turnPage(direction) {
+    if (isTurning) return;
+    const nextIndex = currentPage + direction;
+    if (nextIndex < 0 || nextIndex >= totalPages) return;
+
+    isTurning = true;
+    updateControls();
+
+    const currentEl = pages[currentPage];
+    const nextEl = pages[nextIndex];
+
+    if (bookContainer) {
+      bookContainer.classList.remove("casting-shadow");
+      void bookContainer.offsetWidth; // Reinicia a animação de sombra
+      bookContainer.classList.add("casting-shadow");
+    }
+
+    if (direction === 1) {
+      // Revela a página seguinte por baixo e dobra a folha atual por cima
+      nextEl.classList.add("active");
+      currentEl.classList.remove("active");
+      currentEl.classList.add("turning-next");
+
+      setTimeout(() => {
+        currentEl.classList.remove("turning-next");
+        if (bookContainer) bookContainer.classList.remove("casting-shadow");
+        currentPage = nextIndex;
+        isTurning = false;
+        updateControls();
+      }, TURN_DURATION);
+    } else {
+      // Desdobra a folha anterior da esquerda para a direita por cima da atual
+      nextEl.classList.add("turning-prev");
+
+      setTimeout(() => {
+        currentEl.classList.remove("active");
+        nextEl.classList.remove("turning-prev");
+        nextEl.classList.add("active");
+        if (bookContainer) bookContainer.classList.remove("casting-shadow");
+        currentPage = nextIndex;
+        isTurning = false;
+        updateControls();
+      }, TURN_DURATION);
+    }
+  }
+
+  prevPageBtn.addEventListener("click", () => turnPage(-1));
+  nextPageBtn.addEventListener("click", () => turnPage(1));
+  updateControls();
+}
+
+// =========================================================
+// 5. CARROSSEL DENTRO DAS PÁGINAS
 // =========================================================
 document.querySelectorAll(".carousel").forEach((carousel) => {
   let index = 0;
@@ -139,17 +230,8 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
   carousel.addEventListener("touchstart", () => clearInterval(autoPlay), { passive: true });
 });
 
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) entry.target.classList.add("active");
-    });
-  },
-  { threshold: 0.15 }
-);
-document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
 // =========================================================
-// 5. PARTÍCULAS DE FUNDO (Roda em todas as páginas)
+// 6. PARTÍCULAS DE MAGIA DOURADAS (Lumos)
 // =========================================================
 const canvas = document.getElementById("particlesCanvas");
 if (canvas) {
@@ -161,22 +243,22 @@ if (canvas) {
   resizeCanvas();
   window.addEventListener("resize", resizeCanvas);
 
-  const particles = Array.from({ length: 60 }, () => ({
+  const particles = Array.from({ length: 65 }, () => ({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
-    size: Math.random() * 2 + 1,
-    speed: Math.random() * 0.5 + 0.2,
+    size: Math.random() * 2.2 + 0.8,
+    speed: Math.random() * 0.45 + 0.15,
   }));
 
   function animateParticles() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     particles.forEach((p) => {
-      ctx.fillStyle = "#b880ff";
+      ctx.fillStyle = "#d4af37";
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
       ctx.fill();
-      p.y += p.speed;
-      if (p.y > canvas.height) p.y = 0;
+      p.y -= p.speed; // Flutuam para cima como fagulhas de feitiço
+      if (p.y < 0) p.y = canvas.height;
     });
     requestAnimationFrame(animateParticles);
   }
